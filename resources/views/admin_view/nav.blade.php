@@ -4,8 +4,11 @@
         <meta charset="utf-8">
         <title>Home</title>
         <link rel="stylesheet" href="{{asset('nav_design/style.css')}}">
+        <script src="{{ asset('js/admin_panel.js') }}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
         <nav>
@@ -16,7 +19,6 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
-
-        @yield('content')
+        @yield('add_product_content')
     </body>
 </html>

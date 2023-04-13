@@ -1,7 +1,7 @@
 @extends('admin_view.nav-sidebar')
 
 @section('product')
-<div class="container">
+{{-- <div class="container">
     <h2>Products</h2>          
     <table class="table">
       <thead>
@@ -18,15 +18,14 @@
       <tbody>
         <tr>
         @foreach($products as $product)
-            
-            <img src="{{ asset('storage/app/' . $product->image) }}" alt="Dynamic Image">
-            
-            <td>{{$product->image}}</td>
-            <td>{{$product->price}}</td>
-            <td>{{$product->uop}}</td>
+        
+            <td>{{$product->name}}</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+        
         @endforeach
         </tr>
       </tbody>
     </table>
-</div>
+</div> --}}
 @endsection
