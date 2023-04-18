@@ -6,26 +6,30 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Image</th>
-          <th>Image1</th>
-          <th>Image2</th>
-          <th>Image3</th>
-          <th>Image4</th>
+          <th>image</th>
+          <th>image1</th>
+          <th>image2</th>
+          <th>image3</th>
+          <th>image4</th>
           <th>name</th>
           <th>Price</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        
         @foreach($products as $product)
-            
-            <img src="{{ asset('storage/app/' . $product->image) }}" alt="Dynamic Image">
-            
-            <td>{{$product->image}}</td>
+        <tr>
+            <td><img src="{{ asset('storage/product_images/' . $product->image) }}" alt="Image" style="width:100px; height:100px"></td>
+            <td><img src="{{ asset('storage/product_images/' . $product->image1) }}" alt="Image" style="width:100px; height:100px"></td>
+            <td><img src="{{ asset('storage/product_images/' . $product->image2) }}" alt="Image" style="width:100px; height:100px"></td>
+            <td><img src="{{ asset('storage/product_images/' . $product->image3) }}" alt="Image" style="width:100px; height:100px"></td>
+            <td><img src="{{ asset('storage/product_images/' . $product->image4) }}" alt="Image" style="width:100px; height:100px"></td>
+            <td>{{$product->name}}</td>
             <td>{{$product->price}}</td>
-            <td>{{$product->uop}}</td>
-        @endforeach
         </tr>
+        @endforeach
+        
+        
       </tbody>
     </table>
 </div>

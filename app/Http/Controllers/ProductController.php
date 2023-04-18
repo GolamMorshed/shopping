@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+
 
 class ProductController extends Controller
 {
@@ -31,14 +34,39 @@ class ProductController extends Controller
         $generate_GUID = str_pad(mt_rand(0, 999999), 6, '0', STR_PAD_LEFT);
         $product = new Product();
         $product->GUID = $generate_GUID;
-        $product->image = $request->file('image')->store('product_image');
-        $product->image1 = $request->file('image1')->store('product_image');
-        $product->image2 = $request->file('image2')->store('product_image');
-        $product->image3 = $request->file('image3')->store('product_image');
-        $product->image4 = $request->file('image4')->store('product_image'); 
+
+        // Store the uploaded file and get the path
+        $path = $request->file('image')->store('public/product_images');
+        $path1 = $request->file('image1')->store('public/product_images');
+        $path2 = $request->file('image2')->store('public/product_images');
+        $path3 = $request->file('image3')->store('public/product_images');
+        $path4 = $request->file('image4')->store('public/product_images');
+
+        // Get the filename from the path
+        $filename = basename($path);
+        $filename1 = basename($path1);
+        $filename2 = basename($path2);
+        $filename3 = basename($path3);
+        $filename4 = basename($path4);
+
+        // Save the filename to the product object
+        $product->image = $filename;
+        $product->image1 = $filename1;
+        $product->image2 = $filename2;
+        $product->image3 = $filename3;
+        $product->image4 = $filename4;
+        
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->uop = $request->input('uop');
+        
+
+        //$product->image = $request->file('image')->store('public/product_images');
+        // $product->image1 = $request->file('image1')->store('public/product_images');;
+        // $product->image2 = $request->file('image2')->store('public/product_images');;
+        // $product->image3 = $request->file('image3')->store('public/product_images');;
+        // $product->image4 = $request->file('image4')->store('public/product_images');; 
+        
 
         if($product->save())
         {
