@@ -61,13 +61,6 @@ class ProductController extends Controller
         $product->uop = $request->input('uop');
         
 
-        //$product->image = $request->file('image')->store('public/product_images');
-        // $product->image1 = $request->file('image1')->store('public/product_images');;
-        // $product->image2 = $request->file('image2')->store('public/product_images');;
-        // $product->image3 = $request->file('image3')->store('public/product_images');;
-        // $product->image4 = $request->file('image4')->store('public/product_images');; 
-        
-
         if($product->save())
         {
              return redirect()->back()->with('success', 'product uploaded successfully.');

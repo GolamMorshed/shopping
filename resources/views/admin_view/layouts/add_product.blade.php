@@ -36,11 +36,25 @@
             <label for="">UOP:</label>
             <input name="uop" class="form-control" placeholder="Enter UOP">
         </div>
+        <div class="col-xs-6 form-group">
+          <label for="" class="control-label">Variation Name</label>
+          <input type="variation_name" class="form-control" placeholder="Enter Variation name">
+        </div>
+        <div class="col-xs-6 form-group">
+          <label for="" class="control-label">Variation Price</label>
+          <input type="variation_price" class="form-control" id="" placeholder="Price">
+        </div>
+        <div class="col-xs-6 form-group">
+          
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+        <br>
         <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
     </form>
 </div>
 
-<div class="container">
+{{-- <div class="container">
   <h2>Large Modal</h2>
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
@@ -62,5 +76,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 @endsection
